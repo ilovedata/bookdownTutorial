@@ -1,0 +1,56 @@
+--- 
+title: "Bookdown 패키지를 사용한 한글책 제작의 기초"
+author: "서울시립대학교 통계학과 이용희"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: [book.bib, packages.bib]
+description: "R 패키지 Bookdown 을 사용하여 수식,그림, 표를 포함한 한글 교과서를 만드는 기초에 대한 설명입니다."
+link-citations: yes
+---
+
+```{r echo=TRUE, message=FALSE, warning=FALSE, echo=FALSE}
+library(bookdown)
+library(rmarkdown)
+library(tidyverse)
+library(ggplot2)
+library(kableExtra)
+library(flextable)
+
+
+# 아래 3 문장은 한글을 포함한 ggplot 그림이 포함된 HTML, PDF로 만드는 경우 사용
+library(showtext)
+font_add_google("Nanum Pen Script", "gl")
+showtext_auto()
+
+tidy.opts=list(arrow=TRUE, indent=2)
+
+is_html <- knitr::is_html_output()
+is_latex <- knitr::is_latex_output()
+```
+
+
+# 개요  {-}
+
+이 책은 `bookdown` 패키지를 이용하여  **한글로 수식, 그림, 표를 포함한 책을 작성할 때** 필요한 사항과 유용한 팁을 수록한 안내서입니다.
+
+
+## `bookdown` 패키지를 이용하여 책을 만드는 절차 {-}
+
+1. `R` 과 `Rstudio` 를 사용할 수 있는 환경을 만든다.
+2. `bookdown` 패키지를 포함한 사용할 패키지를 설치한다.
+3. 새로운 `bookdown` 프로젝트를 `Rstudio` 의 `file` 메뉴를 통해서 새로운 디렉토리에 생성한다 
+
+  - **주의**: 메뉴상에서 `file` -> `New project` -> `new directory` -> `bookdown project` 를 이용해서 프로젝트를 만드는 것이 필요하다. 이렇게 만들면 `build` 형식도 `book`으로 나타나고 예제 화일도 생성된다. 먼저 화일을 만들고 이후에 프로젝트를 생성하면 여러 가지 문제가 계속 나타난다. 
+  
+4. 설정화일(`_bookdown.yaml`, `_output.yaml`,..) 등을 포함하여 모든 화일을 원하는 대로 초기화 한다.
+5. `git` 환경을 구성하고 `github` 의 원격저장소에 올린다 
+
+  - 자세한 방법은 [여기](https://docs.github.com/ko/migrations/importing-source-code/using-the-command-line-to-import-source-code/adding-locally-hosted-code-to-github)를 참조하자. 통상적으로 `github` 에 먼저 저장소를 만들고 `clone` 하는 것이 정상적 절차지만 `bookdown` 프로젝트를 초기화하기 위하여 이 방법을 사용한다.)
+
+```{r include=FALSE}
+# automatically create a bib database for R packages
+knitr::write_bib(c(
+  .packages(), 'bookdown', 'knitr', 'rmarkdown'
+), 'packages.bib')
+```
