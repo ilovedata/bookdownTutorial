@@ -143,6 +143,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>개요</a>
 <ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#bookdown-패키지를-이용하여-책을-만드는-절차"><i class="fa fa-check"></i><code>bookdown</code> 패키지를 이용하여 책을 만드는 절차</a></li>
+<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#renv-사용"><i class="fa fa-check"></i><b>0.1</b> <code>renv</code> 사용</a></li>
 </ul></li>
 <li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> 책의 구성요소와 형식</a>
 <ul>
@@ -175,11 +176,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">1.1</span> 책 구성요소의 지정과 참조<a href="intro.html#책-구성요소의-지정과-참조" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><code>Bookdown</code> 에서는 하나의 <code>Rmd</code> 화일이 하나의 장(chapter)이 된다. 따라서 하나의 장에 대한 <code>Rmd</code> 화일은 처음에 다음과 같이 <code>#</code> 으로 장의 이름을 지정한다. 다음으로 하위 절 등의 제목은<code>##</code>, <code>###</code> 순으로 지정한다.</p>
 <p>장 이름을 참조하는 장 이름을 정의하는 문장 뒤에 <code>{#label}</code> 을 붙여준다. 장을 참조하는 방법은 명령문 <code>\@ref(label)</code> 으로 참조한다. (예: 다음 내용은 <a href="intro.html#intro">1</a> 장에 나타나 있다).</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb2-1"><a href="intro.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># 소개 {#intro}</span></span>
-<span id="cb2-2"><a href="intro.html#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="intro.html#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">##  공식</span></span>
-<span id="cb2-4"><a href="intro.html#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="intro.html#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">### 설명</span></span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb3-1"><a href="intro.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># 소개 {#intro}</span></span>
+<span id="cb3-2"><a href="intro.html#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="intro.html#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">##  공식</span></span>
+<span id="cb3-4"><a href="intro.html#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="intro.html#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">### 설명</span></span></code></pre></div>
 
 <div class="rmdcaution">
 장의 이름이 한글인 경우 참조문 <code>{#label}</code>을 붙여주지 않으면 오류가 나오는 경우가 있으니 꼭 붙여주자.
